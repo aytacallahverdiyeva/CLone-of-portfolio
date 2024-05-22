@@ -1,5 +1,7 @@
-import React from 'react'
-import './Navbar.css'
+import React from 'react';
+import './Navbar.css';
+// ^ React icons
+import { FiMenu } from "react-icons/fi";
 
 const Navbar = () => {
   return (
@@ -23,6 +25,12 @@ const Navbar = () => {
 
                     <button className='contact-btn' onClick={() => {}}>Hire Me</button>
                 </ul>
+
+                <button class="menu-btn" onClick={()=> {}}>
+                   <span class={"material-symbols-outlined"} style={{fontSize:"1.8rem"}}>
+                    <FiMenu />
+                   </span>
+                </button>
             </div>
         </nav>
     </>
