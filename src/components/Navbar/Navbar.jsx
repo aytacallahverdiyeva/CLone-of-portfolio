@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Navbar.css';
 // ^ React icons
 import { FiMenu } from "react-icons/fi";
+import MobileNav from './MobileNavbar/MobileNav';
 
 const Navbar = () => {
+
+    const [openMenu, setOpenMenu] = useState(false);
+
+    const toggleMenu = () => {
+        setOpenMenu(!openMenu);
+    }
+
   return (
     <>
+    <MobileNav isOpen={openMenu} toggleMenu={toggleMenu}/>
+
         <nav className='nav-wrapper'>
             <div className='nav-content'>
                 <h1 className='logo'>ITICH IT</h1>
@@ -26,9 +36,10 @@ const Navbar = () => {
                     <button className='contact-btn' onClick={() => {}}>Hire Me</button>
                 </ul>
 
-                <button class="menu-btn" onClick={()=> {}}>
+                <button class="menu-btn" onClick={toggleMenu}>
                    <span class={"material-symbols-outlined"} style={{fontSize:"1.8rem"}}>
-                    <FiMenu />
+                    {/* <FiMenu /> */}
+                    {openMenu ? "close" : <FiMenu />}
                    </span>
                 </button>
             </div>
