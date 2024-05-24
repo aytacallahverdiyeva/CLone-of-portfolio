@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Navbar.css';
 // ^ React icons
 import { FiMenu } from "react-icons/fi";
+import { IoClose } from "react-icons/io5";
 import MobileNav from './MobileNavbar/MobileNav';
 
 const Navbar = () => {
@@ -39,7 +40,7 @@ const Navbar = () => {
                 <button class="menu-btn" onClick={toggleMenu}>
                    <span class={"material-symbols-outlined"} style={{fontSize:"1.8rem"}}>
                     {/* <FiMenu /> */}
-                    {openMenu ? "close" : <FiMenu />}
+                    {openMenu ? <IoClose /> : <FiMenu />}
                    </span>
                 </button>
             </div>
